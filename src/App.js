@@ -6,11 +6,26 @@ import { STORAGE_PRODUCT_CART } from "./utils/constants";
 import { ToastContainer, Toast, toast } from "react-toastify";
 
 import { urlApiProducts } from "./utils/constants";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 function App() {
   const [productsCart, setProductsCart] = useState([]);
   const products = useFetch(urlApiProducts, null);
+
+  useEffect(() => {
+    getProductsCart();
+  }, []);
+
+  const getProductsCart = () => {
+    const idsProducts = localStorage.getItem(STORAGE_PRODUCT_CART);
+
+    if (idsProducts) {
+      const idsProductsSplit = idsProducts.split(",");
+      setProductsCart(idsProductsSplit);
+    } else {
+      setProductsCart([]);
+    }
+  };
 
   const addProductCart = (id, name) => {
     const idsProducts = productsCart;

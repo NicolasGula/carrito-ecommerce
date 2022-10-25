@@ -1,5 +1,6 @@
 import "./products.scss";
 import { Container, Row } from "react-bootstrap";
+import Loading from "../Loading/index";
 
 const Products = (props) => {
   const {
@@ -9,9 +10,11 @@ const Products = (props) => {
   return (
     <Container>
       <Row>
-        {loading || !result
-          ? "Cargando..."
-          : result.map((product, index) => product.name)}
+        {loading || !result ? (
+          <Loading />
+        ) : (
+          result.map((product, index) => product.name)
+        )}
       </Row>
     </Container>
   );

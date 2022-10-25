@@ -1,6 +1,7 @@
 import "./products.scss";
 import { Container, Row } from "react-bootstrap";
 import Loading from "../Loading/index";
+import Product from "../Product/index";
 
 const Products = (props) => {
   const {
@@ -13,7 +14,9 @@ const Products = (props) => {
         {loading || !result ? (
           <Loading />
         ) : (
-          result.map((product, index) => product.name)
+          result.map((product) => (
+            <Product product={product} key={product.id} />
+          ))
         )}
       </Row>
     </Container>

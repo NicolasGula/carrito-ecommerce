@@ -1,6 +1,7 @@
 //Componentes
 import BrandNav from "../BrandNav/BrandNav";
 import MenuNav from "../MenuNav/MenuNav";
+import Cart from "../Cart/index";
 
 //Css
 import { Container, Navbar } from "react-bootstrap";
@@ -12,7 +13,7 @@ const TopMenu = () => {
       <Container>
         <BrandNav />
         <MenuNav />
-        {/* Carrito */}
+        <Cart />
       </Container>
     </Navbar>
   );

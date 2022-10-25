@@ -28,7 +28,6 @@
     > div {
       &:first-of-type {
         display: flex;
-
         svg {
           width: 12px;
           margin-right: 20px;
@@ -71,7 +70,6 @@
     height: calc(100vh - 76px - 119px);
     overflow: scroll;
   }
-
   .cart-content__product {
     display: flex;
     align-items: center;
@@ -84,13 +82,12 @@
     }
 
     .cart-content__product-info {
-      color: #fff;
+      color: #fff !important;
       width: 100%;
 
       h3 {
         font-size: 18px;
       }
-
       p {
         font-size: 16px;
       }
@@ -107,7 +104,6 @@
           p {
             margin: 0;
           }
-
           button {
             background-color: #0098d3;
             border-color: #0098d3;

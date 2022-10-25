@@ -5,7 +5,7 @@ const MenuNav = () => {
     <Nav className="mr-auto">
       <Nav.Link href="#">Aperitivos</Nav.Link>
       <Nav.Link href="#">Helados</Nav.Link>
-      <Nav.Link href="#">LO que sea</Nav.Link>
+      <Nav.Link href="#">Postres</Nav.Link>
     </Nav>
   );
 };

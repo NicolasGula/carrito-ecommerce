@@ -6,6 +6,7 @@ import Product from "../Product/index";
 const Products = (props) => {
   const {
     products: { result, loading, error },
+    addProductCart,
   } = props;
 
   return (
@@ -15,7 +16,11 @@ const Products = (props) => {
           <Loading />
         ) : (
           result.map((product) => (
-            <Product product={product} key={product.id} />
+            <Product
+              product={product}
+              key={product.id}
+              addProductCart={addProductCart}
+            />
           ))
         )}
       </Row>

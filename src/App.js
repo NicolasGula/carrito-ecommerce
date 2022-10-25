@@ -10,6 +10,7 @@ import { useState, useEffect } from "react";
 
 function App() {
   const [productsCart, setProductsCart] = useState([]);
+
   const products = useFetch(urlApiProducts, null);
 
   useEffect(() => {
@@ -32,13 +33,17 @@ function App() {
     idsProducts.push(id);
     setProductsCart(idsProducts);
     localStorage.setItem(STORAGE_PRODUCT_CART, productsCart);
-
+    getProductsCart();
     toast.success(`${name} añadido al carrito correctamente`);
   };
 
   return (
     <div className="App">
-      <TopMenu />
+      <TopMenu
+        productsCart={productsCart}
+        getProductsCart={getProductsCart}
+        products={products}
+      />
       <Products products={products} addProductCart={addProductCart} />
       <ToastContainer
         position="bottom-left"

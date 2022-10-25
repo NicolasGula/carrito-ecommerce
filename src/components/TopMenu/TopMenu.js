@@ -7,13 +7,18 @@ import Cart from "../Cart/index";
 import { Container, Navbar } from "react-bootstrap";
 import "./topMenu.scss";
 
-const TopMenu = () => {
+const TopMenu = (props) => {
+  const { productsCart, getProductsCart, products } = props;
   return (
     <Navbar bg="dark" variant="dark" className="top-menu">
       <Container>
         <BrandNav />
         <MenuNav />
-        <Cart />
+        <Cart
+          productsCart={productsCart}
+          getProductsCart={getProductsCart}
+          products={products}
+        />
       </Container>
     </Navbar>
   );
